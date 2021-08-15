@@ -1,20 +1,35 @@
-<mxfile host="app.diagrams.net" modified="2021-07-14T21:19:40.487Z" agent="5.0 (X11)" etag="Mn0yODJ27zh8Vg94se0s" version="14.8.6" type="github">
+<mxfile host="app.diagrams.net" modified="2021-08-15T19:23:50.403Z" agent="5.0 (X11)" etag="l8oS8AgRIVRg8xMmvyzl" version="14.9.6" type="github">
   <diagram id="FU-hAiQ2jWVy-CHbJ2Bp" name="Page-1">
-    <mxGraphModel dx="1414" dy="756" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1414" dy="717" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="xFpBMtKrn-xvIBUylXZr-2" value="&lt;div align=&quot;left&quot;&gt;Nomad 01&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Nomad server&lt;/li&gt;&lt;li&gt;Consul server&lt;/li&gt;&lt;li&gt;Vault&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+        <mxCell id="xFpBMtKrn-xvIBUylXZr-2" value="&lt;div align=&quot;left&quot;&gt;Nomad 01&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Nomad server&lt;/li&gt;&lt;li&gt;Consul server&lt;/li&gt;&lt;li&gt;Vault&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="40" y="40" width="160" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="xFpBMtKrn-xvIBUylXZr-3" value="&lt;div align=&quot;left&quot;&gt;Nomad 02&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Nomad client&lt;/li&gt;&lt;li&gt;Consul server&lt;/li&gt;&lt;li&gt;Vault&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;Screen + App&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+        <mxCell id="xFpBMtKrn-xvIBUylXZr-3" value="&lt;div align=&quot;left&quot;&gt;Nomad 02&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Nomad client&lt;/li&gt;&lt;li&gt;Consul server&lt;/li&gt;&lt;li&gt;Vault&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;Screen + App&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="40" y="200" width="160" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="xFpBMtKrn-xvIBUylXZr-4" value="&lt;div align=&quot;left&quot;&gt;Nomad 03&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Nomad client&lt;/li&gt;&lt;li&gt;Consul server&lt;/li&gt;&lt;li&gt;Vault&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+        <mxCell id="xFpBMtKrn-xvIBUylXZr-4" value="&lt;div align=&quot;left&quot;&gt;Nomad 03&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Nomad client&lt;/li&gt;&lt;li&gt;Consul server&lt;/li&gt;&lt;li&gt;Vault&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="40" y="360" width="160" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="xFpBMtKrn-xvIBUylXZr-5" value="&lt;div align=&quot;left&quot;&gt;Nomad 04&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Nomad client&lt;/li&gt;&lt;li&gt;Consul client&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;Senses&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+        <mxCell id="xFpBMtKrn-xvIBUylXZr-5" value="&lt;div align=&quot;left&quot;&gt;Nomad 04&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Nomad client&lt;/li&gt;&lt;li&gt;Consul client&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;Grafana&lt;/div&gt;&lt;div&gt;Prometheus&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="280" y="40" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="FAk5QtxeVAfOXxIBOoby-1" value="&lt;div align=&quot;left&quot;&gt;Nomad 05&lt;div&gt;Nexus&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="280" y="200" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="FAk5QtxeVAfOXxIBOoby-2" value="&lt;div align=&quot;left&quot;&gt;Nomad 06&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Nomad client&lt;/li&gt;&lt;li&gt;Consul client&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;Doorbel&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="280" y="360" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="FAk5QtxeVAfOXxIBOoby-4" value="&lt;div align=&quot;left&quot;&gt;Nomad 07&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Nomad client&lt;/li&gt;&lt;li&gt;Consul client&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;Senses&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="280" y="520" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="FAk5QtxeVAfOXxIBOoby-5" value="&lt;div align=&quot;left&quot;&gt;Nomad 08&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Nomad client&lt;/li&gt;&lt;li&gt;Consul client&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;General&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="280" y="680" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="FAk5QtxeVAfOXxIBOoby-6" value="&lt;div align=&quot;left&quot;&gt;Nomad 09&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Nomad client&lt;/li&gt;&lt;li&gt;Consul client&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="280" y="840" width="160" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
