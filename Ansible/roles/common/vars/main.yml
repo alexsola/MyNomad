@@ -6,4 +6,5 @@ packages:
  - vim
  - jq
  - screen
+ - software-properties-common
  
