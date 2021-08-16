@@ -1,3 +1,4 @@
+
 - name: Configure nodes hostnames, netstat
   hosts: all
   vars_files:
@@ -10,59 +11,59 @@
   tags:
     - common
 
-- name: Install and configure Consul
-  hosts: all
-  vars_files:
-    - common.yml
+# - name: Install and configure Consul
+#   hosts: all
+#   vars_files:
+#     - common.yml
 
-  roles:
-    - consul
+#   roles:
+#     - consul
 
-  tags:
-    - consul
+#   tags:
+#     - consul
 
-      #- name: Install and configure Vault
-      #  hosts: vault_servers
-      #  vars_files:
-      #    - common.yml
+# - name: Install and configure Vault
+#   hosts: vault_servers
+#   vars_files:
+#     - common.yml
 
-      #  roles:
-      #    - vault
+#   roles:
+#     - vault
 
-      #  tags:
-      #    - vault
+#   tags:
+#     - vault
 
-      #- name: Install and configure Nomad
-      #  hosts: all
-      #  vars_files:
-      #    - common.yml
+# - name: Install and configure Nomad
+#   hosts: all
+#   vars_files:
+#     - common.yml
 
-      #  roles:
-      #    - nomad
+#   roles:
+#     - nomad
 
-      #  tags:
-      #    - nomad
+#   tags:
+#     - nomad
 
-      #- name: Generate secrets
-      #  hosts: nomad1
-      #  vars_files:
-      #    - common.yml
+# - name: Generate secrets
+#   hosts: nomad1
+#   vars_files:
+#     - common.yml
 
-      #  roles:
-      #    - create_secrets
+#   roles:
+#     - create_secrets
 
-      #  tags:
-      #    - secrets
+#   tags:
+#     - secrets
 
 # Deploy nexus, mariadb, grafana, prometheus, Influsdb, graphite, galera, etc
 
-      #- name: Finish install
-      #  hosts: nomad1
-      #  vars_files:
-      #    - common.yml
+# - name: Finish install
+#   hosts: nomad1
+#   vars_files:
+#     - common.yml
 
-      #  roles:
-      #    - postinstall
+#   roles:
+#     - postinstall
 
-      #  tags:
-      #    - finish
+#   tags:
+#     - finish
