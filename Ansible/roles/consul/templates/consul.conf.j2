@@ -1,0 +1,13 @@
+[Unit]
+Description=Consul Server
+Wants=network-online.target
+After=network-online.target 
+
+[Service]
+ExecStart= /bin/sh -c "{{ hashicorp_install_path }}/consul/bin/consul agent -config-dir {{ hashicorp_install_path }}/consul/config"
+ExecStop= /bin/sh -c "{{ hashicorp_install_path }}/consul/bin/consul leave"
+Restart=always
+RestartSec=10 
+
+[Install]
+WantedBy=multi-user.target

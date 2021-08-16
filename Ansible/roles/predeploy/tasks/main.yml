@@ -1,0 +1,27 @@
+---
+# tasks file for predeploy
+
+- name: Prepare monitoring hosts. Create volumes
+  file:
+    path: "{{ item.path }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    state: directory
+  with_items:
+   - { path: '/var/lib/prometheus', owner: 'nobody', group: 'nogroup' }
+   - { path: '/var/lib/grafana', owner: 'nobody', group: 'nogroup' }
+   - { path: '/var/lib/grafana/log', owner: 'nobody', group: 'nogroup' }
+   - { path: '/var/lib/grafana/etc', owner: 'nobody', group: 'nogroup' }
+   - { path: '/var/lib/grafana/data', owner: 'nobody', group: 'nogroup' }
+  when: function == 'monitoring'
+
+- name: Prepare storage hosts. Create volumes
+  file:
+    path: "{{ item.path }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    state: directory
+  with_items:
+   - { path: '/var/lib/postgres', owner: 'nobody', group: 'nogroup' }
+   - { path: '/var/lib/influxdb', owner: 'nobody', group: 'nogroup' }
+  when: function == 'storage'

@@ -1,0 +1,9 @@
+---
+# vars file for common
+
+packages:
+ - net-tools
+ - vim
+ - jq
+ - screen
+ 

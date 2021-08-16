@@ -1,0 +1,70 @@
+---
+# tasks file for consul
+
+- name: Create Consul directories
+  file:
+    name: "{{ item }}"
+    state: directory
+    owner: root
+    group: root
+  with_items:
+    "{{ consul_dirs }}"
+
+- name: Unzip Consul binary
+  unarchive:
+    src: consul_1.2.3_linux_arm.zip
+    dest: "{{ hashicorp_install_path }}/consul/bin"
+
+- name: Copy Consul systemd configuration file
+  template: 
+    src: templates/consul.conf.j2 
+    dest: /etc/systemd/system/consul.service 
+    owner: root 
+    group: root 
+    mode: 0640
+
+- name: Create encryption
+  shell: "{{ hashicorp_install_path }}/consul/bin/consul keygen"
+  register: consul_encryption_key
+  when: ansible_hostname == groups['consul_masters'][0]
+
+- name: Configure consul bootstrap server if this is first server
+  template:
+    src: templates/server_bootstrap.hcl.j2
+    dest: "{{ hashicorp_install_path }}/consul/config/server.hcl"
+    owner: root
+    group: root
+    mode: 0600
+  when: ansible_host in groups['consul_masters'] and ansible_hostname == groups['consul_masters'][0]
+
+- name: Configure consul server if this is a server
+  template:
+    src: templates/server.hcl.j2
+    dest: "{{ hashicorp_install_path }}/consul/config/server.hcl"
+    owner: root
+    group: root
+    mode: 0600
+  when: ansible_host in groups['consul_masters'] and ansible_hostname != groups['consul_masters'][0]
+
+- name: Configure consul client if this is a client
+  template:
+    src: templates/client.hcl.j2
+    dest: "{{ hashicorp_install_path }}/consul/config/client.hcl"
+    owner: root
+    group: root
+    mode: 0600
+  when: ansible_host in groups['consul_clients']
+
+- name: Register Consul as service
+  shell: systemctl enable consul.service
+
+- name: Reload Consul service
+  shell: systemctl daemon-reload
+
+- name: Start Consul
+  shell: systemctl start consul
+
+- name: Waiting for Consul to raft out
+  become: no
+  wait_for: timeout=30
+  delegate_to: localhost

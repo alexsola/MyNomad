@@ -1,0 +1,75 @@
+---
+# tasks file for common
+
+# Disble swap
+- name: Disable swap 
+  command: "{{ item }}"
+  with_items:
+   - swapoff -a
+
+# Remove swap file
+- name: Ensure swap file is gone
+  file:
+    path: /var/swap
+    state: absent
+
+- name: Remove swap from fstab
+  lineinfile:
+    path: /etc/fstab
+    state: absent
+    regexp: '^/var/swap    none    swap    sw    0   0$'
+
+# Enable cgroups
+- name: Enable cgroups
+  lineinfile:
+    path: /boot/cmdline.txt
+    regexp: '^(.*)rootwait$'
+    line: '\1rootwait cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory'
+    backrefs: yes
+
+# Set proper hostname
+- name: Alter /etc/hostname
+  replace:
+    path: /etc/hostname
+    regexp: 'raspberrypi'
+    replace: "{{ ansible_host }}"
+    backup: yes
+
+- name: Alter /etc/hosts
+  replace:
+    path: /etc/hosts
+    regexp: 'raspberrypi'
+    replace: "{{ ansible_host }}"
+    backup: yes
+
+# Prepare the environment
+- name: copy profile to /etc/profile
+  copy:
+    src: files/profile
+    dest: /etc/profile
+    owner: root
+    group: root
+    mode: 0644
+
+- name:  Add nexus as not crypted repository for testing
+  template:
+    src: templates/daemon.json.j2
+    dest: /etc/docker/daemon.json
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Install loved packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+   - "{{ packages }}"
+
+- name: Copy .bashrc
+  template:
+    src: bashrc
+    dest: /home/pi/.bashrc
+    owner: pi
+    group: pi
+

@@ -1,0 +1,11 @@
+hashicorp_install_path: "/opt/hashicorp"
+default_user: pi
+default_password: raspberry
+artifactory_host: nexus.cyberhell.com
+vault_local_address: "http://127.0.0.1:8200"
+nomad_local_address: "http://192.168.1.150:4646"
+consul_local_address: "http://127.0.0.1:8500"
+lease_ttl: "3600"
+lease_max_ttl: "86400"
+tokens_file: "/home/pi/.tokens"
+tokens_file_mode: "0400"

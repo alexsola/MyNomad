@@ -1,0 +1,8 @@
+---
+# vars file for consul
+
+consul_dirs:
+ - "{{ hashicorp_install_path }}/consul"
+ - "{{ hashicorp_install_path }}/consul/config"
+ - "{{ hashicorp_install_path }}/consul/state"
+ - "{{ hashicorp_install_path }}/consul/bin"

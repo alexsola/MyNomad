@@ -1,0 +1,10 @@
+{
+    "bootstrap": true,
+    "server": true,
+    "datacenter": "casa_pi",
+    "data_dir": "{{ hashicorp_install_path }}/consul/state",
+    "encrypt": {{ consul_encryption_key['stdout_lines'][0] | to_json }},
+    "node_name" : "consul_{{ ansible_host }}",
+    "bind_addr" : "{{ ansible_default_ipv4.address }}",
+    "client_addr" : "{{ ansible_default_ipv4.address }} 127.0.0.1"
+}
